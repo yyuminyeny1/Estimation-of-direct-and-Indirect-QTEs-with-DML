@@ -1,13 +1,13 @@
 ## Empirical application (HHY, 2026)
 rm(list = ls(all = TRUE))
-setwd("C:/emp_qte_070926/")
+# setwd("C:/Estimation-of-direct-and-Indirect-QTEs-with-DML-main/")
 library(hdm)
 library(causalweight)
-source("function_med_qte.R")
+source("./function_med_qte.R")
 
 ################################################
 ## Clearn data
-load("JCquantile.RData")
+load("./JCquantile.RData")
 datax<-JCquantile
 datax<-subset(datax, select = -c(h1, e1, e5, e6, e7, e8, e20))
 datax<-datax[complete.cases(datax),]
@@ -36,7 +36,7 @@ medeff<-medDML(y = Y, d = D, m = M, x = x, k=5)
 round(medeff$results,3)
 
 ## QTE DML estimation
-source("med_qte_plasso_db_fit.R")
+source("./med_qte_plasso_db_fit.R")
 
 ################################################
 ## Multiplier bootstrap
