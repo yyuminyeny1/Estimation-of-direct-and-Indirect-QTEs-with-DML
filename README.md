@@ -2,7 +2,7 @@
 
 R scripts for implementing the double machine learning (DML) estimation of the natural direct, indirect, and total quantile treatment effects (QTEs) in the empirical application of the paper:
 
-> Hsu et al. (2026). *Estimation of Direct and Indirect Quantile Treatment Effects with Double Machine Learning.* Journal of Business & Economic Statistics (JBES).
+>Yu-Chin Hsu, Martin Huber and Yu-Min Yen (2026), *Estimation of Direct and Indirect Quantile Treatment Effects with Double Machine Learning*, Journal of Business & Economic Statistics.
 
 ## Data
 
