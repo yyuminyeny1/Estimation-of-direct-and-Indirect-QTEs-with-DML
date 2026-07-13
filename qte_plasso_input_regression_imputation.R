@@ -32,7 +32,10 @@ if(s>=4){
   
 }
 
-new_data_DMX1<-data.frame(D = Ds2, M = Ms2, MD = Ms2 * Ds2, xDs2[ ,sel_X, drop = FALSE])
+new_data_DMX <- data.frame(D = Dp, M = Mp, MD = Mp * Dp, 
+                           xDp[ ,sel_X, drop = FALSE])
+new_data_DMX1<-data.frame(D = Ds2, M = Ms2, MD = Ms2 * Ds2, 
+                          xDs2[ ,sel_X, drop = FALSE])
 
 ###################################################################
 ## Model P(Y<=a|D,M,X)
