@@ -20,7 +20,7 @@ The folder contains the following seven R scripts.
 2. **`function_med_qte.R`** — Contains the functions used throughout the estimation procedure.
 
 3. **`med_qte_plasso_db_fit.R`** — Contains the code for conducting the DML estimation (using post-Lasso) of the CDFs of the potential outcomes, and computing the TQTE, NDQTE, NIQTE, NDQTE′, and NIQTE′, as well as the efficient influence functions (EIFs) for the CDFs of the potential outcomes. This script calls the following auxiliary scripts:
-   - a. `plasso_model_selection_D_D1.R` — Uses Lasso to select covariates for estimating $P(D \mid X)$ and $P(D \mid M, X)$.
-   - b. `plasso_D_D1.R` — Estimates $P(D \mid X)$ and $P(D \mid M, X)$ using post-Lasso.
-   - c. `qte_plasso_input_regression_imputation.R` — Splits the data for implementing Algorithm 2 in Farbmacher et al. (2022).
-   - d. `qte_plasso_regression_imputation.R` — Implements Algorithm 2 in Farbmacher et al. (2022).
+   - `plasso_model_selection_D_D1.R` — Uses Lasso to select covariates for estimating $P(D \mid X)$ and $P(D \mid M, X)$.
+   - `plasso_D_D1.R` — Estimates $P(D \mid X)$ and $P(D \mid M, X)$ using post-Lasso.
+   - `qte_plasso_input_regression_imputation.R` — Splits the data for implementing Algorithm 2 in Farbmacher et al. (2022).
+   - `qte_plasso_regression_imputation.R` — Implements Algorithm 2 in Farbmacher et al. (2022).
