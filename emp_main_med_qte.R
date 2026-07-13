@@ -1,6 +1,5 @@
 ## Empirical application (HHY, 2026)
 rm(list = ls(all = TRUE))
-# setwd("C:/Estimation-of-direct-and-Indirect-QTEs-with-DML-main/")
 library(hdm)
 library(causalweight)
 source("./function_med_qte.R")

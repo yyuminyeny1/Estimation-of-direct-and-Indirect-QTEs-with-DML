@@ -50,7 +50,7 @@ for(s in 1:nrow(ind_pred)){
   xYs<-xY[-c(ind_st:ind_end),]
   xYp<-xY[c(ind_st:ind_end),]
   
-  source("plasso_model_selection_D_D1.R")
+  source("./plasso_model_selection_D_D1.R")
   
   ## Dp and Mp
   ind_d1<-as.numeric(Dp==1)
@@ -66,14 +66,14 @@ for(s in 1:nrow(ind_pred)){
     sel_X<-sel_indYs[-c(1:3)]|sel_X0
 
     ## fit post lasso regressions for D and D1
-    source("plasso_D_D1.R")
+    source("./plasso_D_D1.R")
     
     ## Fit P[Y<=a|d,M,X] on (D, X) for 
     ## estimating E[p(Y<=a|d,M,X)|d',X]
-    source("qte_plasso_input_regression_imputation.R")
+    source("./qte_plasso_input_regression_imputation.R")
     
     ## Regression imputation
-    source("qte_plasso_regression_imputation.R")
+    source("./qte_plasso_regression_imputation.R")
     
     ## 1{Yp<=a}
     indYp<-as.numeric(Yp<=a[i])
