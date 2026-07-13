@@ -52,7 +52,7 @@ mod_data_Y1Mi[,'MD'] <- mod_data_Y1Mi[,'D'] * mod_data_Y1Mi[,'M']
 py1mi_hat <- as.numeric(predict(mod_indYs1, newdata = mod_data_Y1Mi,
                                 type = "response"))
 
-## Estimates for P_hat(Y<=a|d = 1,M,X) with new_data_DMX
+## Estimates for P(Y<=a|d = 1,M,X) with new_data_DMX
 ## This is for IF calculation
 new_data_Y1Mi<-new_data_DMX
 new_data_Y1Mi[,'D']<-1
@@ -68,7 +68,7 @@ mod_data_Y0Mi[,'MD']<-mod_data_Y0Mi[,'D'] * mod_data_Y0Mi[,'M']
 py0mi_hat <- as.numeric(predict(mod_indYs1, newdata = mod_data_Y0Mi,
                                 type = "response"))
 
-## Estimates for P_hat(Y<=a|d = 0,M,X) with new_data_DMX
+## Estimates for P(Y<=a|d = 0,M,X) with new_data_DMX
 ## this is for IF calculation
 new_data_Y0Mi<-new_data_DMX
 new_data_Y0Mi[,'D']<-0
