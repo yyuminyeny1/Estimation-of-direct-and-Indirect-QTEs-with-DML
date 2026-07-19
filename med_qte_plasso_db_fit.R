@@ -24,8 +24,9 @@ ind_pred<-k_fold_ind(n = length(Y), k_fold = k_fold)
 ## Data for model selection
 ## Need to be matrix
 xD<-as.matrix(x)
-xD1<-as.matrix(cbind(M, xD))
-xY<-as.matrix(cbind(D, M, M*D, xD))
+colnames(xD)<-paste0("X", 1:ncol(xD))
+xD1<-as.matrix(cbind(M, xD))                # inherits xD's names automatically, plus "M"
+xY<-as.matrix(cbind(D, M, M*D, xD))         # same — will need explicit names for the D/M/MD columns too if unnamed
 
 for(s in 1:nrow(ind_pred)){
   
