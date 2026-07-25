@@ -2,9 +2,16 @@
 ## Model: E[P(Y<=a|d,M,X)|d',X]
 ## Split the subsamples W_c using the second half
 ## Similar as algorithm 2 in Farbmacher et al (2022)
-data_py1mi<-data.frame(y = py1mi_hat, D = Ds2, xDs2[ ,sel_X, drop = FALSE])
-data_py0mi<-data.frame(y = py0mi_hat, D = Ds2, xDs2[ ,sel_X, drop = FALSE])
-data_YDX<-data.frame(y = indYs, D = Ds, xDs[ ,sel_X, drop = FALSE])
+xDs2_sel <- xDs2[, sel_X, drop = FALSE]
+ind_const_X2 <- which_are_constant(xDs2_sel, verbose = FALSE)   # check X only
+xDs2_sel <- as.data.frame(xDs2_sel)                             # undo any data.table conversion
+if(length(ind_const_X2) > 0){
+  xDs2_sel <- xDs2_sel[, -ind_const_X2, drop = FALSE]
+}
+
+data_py1mi<-data.frame(y = py1mi_hat, D = Ds2, xDs2_sel)
+data_py0mi<-data.frame(y = py0mi_hat, D = Ds2, xDs2_sel)
+data_YDX<-data.frame(y = indYs, D = Ds, xDs_sel)
 
 new_data_DX<-data.frame(D = Dp, xDp[ ,sel_X, drop = FALSE])
 new_data_py1mi<-new_data_DX

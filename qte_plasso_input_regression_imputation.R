@@ -39,7 +39,14 @@ new_data_DMX1<-data.frame(D = Ds2, M = Ms2, MD = Ms2 * Ds2,
 
 ###################################################################
 ## Model P(Y<=a|D,M,X)
-data_indYs1 <- data.frame(y = indYs1, D = Ds1, M = Ms1, MD = Ms1 * Ds1, xDs1[ ,sel_X, drop = FALSE])
+xDs1_sel <- xDs1[, sel_X, drop = FALSE]
+ind_const_X1 <- which_are_constant(xDs1_sel, verbose = FALSE)   # check X only
+xDs1_sel <- as.data.frame(xDs1_sel)                             # undo any data.table conversion
+if(length(ind_const_X1) > 0){
+  xDs1_sel <- xDs1_sel[, -ind_const_X1, drop = FALSE]
+}
+data_indYs1 <- data.frame(y = indYs1, D = Ds1, M = Ms1, MD = Ms1 * Ds1, xDs1_sel)
+
 mod_indYs1<-glm(y ~ ., data = data_indYs1, 
                 family = binomial(link = "logit"))
 
