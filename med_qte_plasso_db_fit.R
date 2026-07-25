@@ -142,10 +142,16 @@ p00<-sort(px00)
 p01<-sort(px01)
 
 ## find quantiles with the function approx
-q10<-find_qx(px = p10, ax = a, taux = g)
-q00<-find_qx(px = p00, ax = a, taux = g)
-q11<-find_qx(px = p11, ax = a, taux = g)
-q01<-find_qx(px = p01, ax = a, taux = g)
+qx10<-find_qx(px = p10, ax = a, taux = g)
+qx00<-find_qx(px = p00, ax = a, taux = g)
+qx11<-find_qx(px = p11, ax = a, taux = g)
+qx01<-find_qx(px = p01, ax = a, taux = g)
+
+## Sorting
+q11<-sort(qx11)
+q10<-sort(qx10)
+q00<-sort(qx00)
+q01<-sort(qx01)
 
 ## QTEs
 TQTE<-q11 - q00
